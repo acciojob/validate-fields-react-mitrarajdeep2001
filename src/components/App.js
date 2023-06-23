@@ -24,7 +24,7 @@ const App = () => {
             <label htmlFor="password">Password:</label>
             <input id="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
           </div>
-          <p id="errorMessage">{errorMessage}</p>
+          {errorMessage && <p id="errorMessage">{errorMessage}</p>}
           <button onClick={submitForm}>Login</button>
         </form>
     </div>
