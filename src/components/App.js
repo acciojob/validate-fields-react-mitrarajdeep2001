@@ -25,7 +25,7 @@ const App = () => {
             <input id="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
           </div>
           {showError && <p id="errorMessage">Both username and password are required.</p>}
-          <input type="submit" onClick={submitForm}/>
+          <button onClick={submitForm}>Login</button>
         </form>
     </div>
   )
