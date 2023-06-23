@@ -5,13 +5,13 @@ import './../styles/App.css';
 const App = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [showError, setShowError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   function submitForm(e) {
     e.preventDefault()
     if (!(username && password)) {
-      setShowError(true)
+      setErrorMessage('Both username and password are required.')
     }
-    else setShowError(false)
+    else setErrorMessage('')
   }
   return (
     <div>
@@ -24,7 +24,7 @@ const App = () => {
             <label htmlFor="password">Password:</label>
             <input id="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
           </div>
-          {showError && <p id="errorMessage">Both username and password are required.</p>}
+          <p id="errorMessage">{errorMessage}</p>
           <button onClick={submitForm}>Login</button>
         </form>
     </div>
